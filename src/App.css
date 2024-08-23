@@ -1,0 +1,76 @@
+/* Outer container for stars */
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  font-size: 1.5rem; /* Adjust size as needed */
+  color: #ccc; /* Color for empty stars */
+}
+
+/* Inner container for filled stars */
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #f5a623; /* Color for filled stars */
+}
+
+/* Star character (can use a star icon or Unicode star) */
+.stars-outer::before,
+.stars-inner::before {
+  content: "★★★★★"; /* 5 stars */
+  display: block;
+}
+
+/* Adjust this to match the size of the stars */
+.stars-outer,
+.stars-inner {
+  font-family: 'FontAwesome'; /* If using FontAwesome for star icons */
+}
+
+
+/* custom.css */
+/* Remove increment and decrement buttons in number inputs for WebKit browsers (e.g., Chrome, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove increment and decrement buttons in number inputs for Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+/* Outer container for stars */
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  font-size: 1.5rem; /* Adjust size as needed */
+  color: #ccc; /* Color for empty stars */
+}
+
+/* Inner container for filled stars */
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #f5a623; /* Color for filled stars */
+}
+
+/* Star character (can use a star icon or Unicode star) */
+.stars-outer::before,
+.stars-inner::before {
+  content: "★★★★★"; /* 5 stars */
+  display: block;
+}
+
+/* Adjust this to match the size of the stars */
+.stars-outer,
+.stars-inner {
+  font-family: 'FontAwesome'; /* If using FontAwesome for star icons */
+}

@@ -1,0 +1,147 @@
+
+Redux:
+npm i redux-thunk - to handle asynchronomus operations to redux
+npm i react-helmet-async - to chage pages title dynamicaly
+slice - oruslice la reducer and actions irukum initialState -reducer  actions-reducers
+action.payload - ithu than api request valiyatu kitutha response
+action - ithu oru fuction
+action.paylod - ithila ne function valiya enna anupiriyo athu than paylod nu solluvanga , ne  api response anupina athu than action.payload illena "hello world" nu string anupina athuthan action.paylod
+"proxy":"http://127.0.0.1:8000" - api request ellam inth port la irunthu than pogum proxy set panna
+127.0.0.1   - localHost 
+useDispatch - ithu oru hook itha components la mattum than import panni use panna mudiyum athanala than getproducts la arguments ah dispath ah use panrom
+useSelector - you can awilable all states
+
+pagination : 
+   npm i react-js-pagination
+   totalproduct ka count venum
+   perpage ka count venum
+   currentpage ka count venum
+   itemsClass use panni pagination ah style pannalam
+   onchange - currentpage ethanu set panrathuku use panrathu
+
+onMouseUp - for onchange event using in slider component 
+
+accept="image/*" // for resiriction onlu accept image type only example .jpg , .png etc..
+display - block : full widtheyum edukkum
+
+
+image upload :
+const reader = new FileReader - this is a object
+reader.readAsDataURL - (file ah url ah conert panrathuku) nama choose panra file url ah convert panni base64 ah save panni vachu irukkum ithuka ulla binary digits irukum .
+               main ah image ah preview panrathuku itha use pannuvom
+const reader = new FileReader - this is a object
+reader.onloadend - file ah url ah convert panna peravu  atha access panrthuku reader.result la than irkkum antha url
+reader.result  - ithila tjaan antha url ah acces panna mudiyum
+simple ah sollanum na image preview panrathuku mattum than ithu theva image preview panna theva illena e.target.file[0] ithuve pothum 
+
+.env - in vite
+ to crete vite .env file with before using VITE . example - VITE_APIURL
+ to get vite .env file using  - import.meta.env.VITE_APIURL
+
+.env - normal react
+  to crete vite .env file with before using REACT_APP . example - REACT_APP_API_URL
+   to get vite .env file using  - process.env.REACT_APP_API_URL
+
+ nullish coalescing operator - ??
+
+ <Navigate /> - like a useNavigate but it is a jsx component
+ <ProtectedRoute/> - only acces some pages for logined users only
+
+ formData - formdata use pannale headers autometic ah multform/formData ippadi than pogum,
+            so image ethuvu illena headers ah application json ah convert panni kudukkanum.
+
+addCart - addCart ah click pannumpothu products details ellam localstorage la poi save aaganum  
+{ items:cartItems } - rename the destructured objcet cart items contain items    
+
+return item - If the current item's productId does not match the action.payload, the original item is returned unmodified.
+
+redirect pages :
+    fisrt user login panni irukanglanu check pannum next login pannelanena antha page ka location ah vangitu 
+    login page ku redirect pannum 
+    example : loaction.search na query parameter send panrathuku
+             location.search la value irunth atha split panni antha page ku kondu povum
+
+stripe: 
+  npm install @stripe/react-stripe-js @stripe/stripe-js
+  @stripe/react-stripe-js  - for react
+  @stripe/stripe-js - for stripe
+   first stripeApi key key ya backend la irunthu url valiya get pannanum
+   next Elments nu cholltha oru component ah import pannanum stripe-react la irunthu ithula la than stripe ku thevaya styling compnents irukkum
+   next loadStripe onnu import pannanum @stripe/stripe-js la irunthu ithu valiyathan stripe api key ya props ah send pannanum payment component ku
+   strip-api-key - itha frontend straite aavum kudukkalam ippadi api create pannama
+   backend la value ah irukurtha tha frontend key ah vachu value kudukkanum illena eeeor adikkum
+   example   line : address   ithu backend
+
+   currency : backend la currency "usd" ippadi kuduthu iruntha frontEnd la country united states nu than kudukanum illena error varun
+              so ungalku indian type currency venumina inr nu backend la kuduthitu fronend la india nu kudutha pothum
+
+  address : michelapuram,neerody   ithu frontend  frontend la kudukkum pothu ippadi kudukanum  anth address mattum eduthu kudukkanum       
+           useElements() - elemts get panrathuku use pannuvanga it means cardnumberinput,expirenumperinput,cvcNumberinput
+     const cardNumber = elements.getElement(CardNumberElement);
+    const cardExpiry = elements.getElement(CardExpiryElement);
+    const cardCvc = elements.getElement(CardCvcElement);
+    cardnumber mattum posthum payment confirm agarathuku
+    ithu ellam input vagrathuku vendi use panrathu ithu useelments use panni get pannuvanga
+   amount:
+     stripe decimel values ah accept pannathu 
+     example :100.87 
+     so 100 ippaditha send pannuum so math.round use pannanum
+confirmPayment :
+  await stripe.confirmCardPayment - it conatins error and paymenIntent - ith destructuring panniyum edukalmam      
+  ithuka ulla clientSecret and billing methods ah send pannanum
+
+validation : 
+  intha fuction enna pnnuthana shipping info enter pannama confirm order and payment section ulla enter panna vidathu  
+
+className="overflow-x-auto" : 
+   Without overflow-x-auto, a wide table might look like this on small screens:
+  With overflow-x-auto, the table allows horizontal scrolling:
+  In summary, overflow-x-auto is a common practice in responsive design to manage large tables or other wide content that needs to be accessible on various screen sizes.
+
+const { userOrders = [] } = useSelector((state) => state.orderState)  : first time load agupothu undefiend illama irukka = [] use panni empty array ippadi mention pannuvanga
+
+Math.ceil ():
+Math.ceil() is a built-in JavaScript method that rounds a number upward to the nearest integer.
+It stands for "ceiling," which is a mathematical term for rounding up. Here’s a breakdown of how Math.ceil() works and why it's useful:
+  Rounding Positive Numbers:
+Math.ceil(4.2) returns 5. (4.2 rounded up to the next integer is 5.)
+Math.ceil(7.8) returns 8. (7.8 rounded up to the next integer is 8.)
+
+Math.slice :
+  The slice() method is used to create a shallow copy of a portion of an array into a new array object. It does not modify the original array.
+   The new array includes elements from the start index up to, but not including, the end index.
+example :
+  const array = [1, 2, 3, 4, 5];
+const newArray = array.slice(1, 4);
+console.log(newArray); // Output: [2, 3, 4]  
+Here, array.slice(1, 4) extracts elements starting from index 1 up to (but not including) index 4.
+
+example 2:
+  const array = [1, 2, 3, 4, 5];
+const newArray = array.slice(2);
+console.log(newArray); // Output: [3, 4, 5]
+Here, array.slice(2) extracts elements starting from index 2 to the end of the array.
+
+
+
+
+
+
+
+
+
+
+
+
+             
+
+
+
+
+
+
+
+
+
+
+
