@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import daisyui from "daisyui"
+
 
 export default {
   content: [
@@ -10,7 +10,13 @@ export default {
     extend: {},
   },
   plugins: [
-    daisyui
+     require("@tailwindcss/typography"), 
+     require("daisyui")
   ],
+  daisyui:{
+  } 
 }
 
+
+//npm install @tailwindcss/typography@latest
+//using calssName = "prose"

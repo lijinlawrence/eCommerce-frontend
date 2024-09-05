@@ -21,6 +21,7 @@ import {
   updateProfileRequest,
   updateProfileSuccess,
 } from "../slices/authSlice";
+import { deleteUserFail, deleteUserRequest, deleteUserSuccess, updateUserFail, updateUserRequest, updateUserSuccess, userFail, userRequest, usersFail, usersRequest, usersSuccess, userSuccess } from "../slices/userSlice";
 
 const apiurl = import.meta.env.VITE_APIURL; // to import .env ile
 console.log(apiurl);
@@ -184,3 +185,72 @@ export const forgetPassword = (formData) => async (dispatch) => {
     console.log(error.response.data.message);
   }
 };
+
+
+
+//admin - getUsers
+export const getUsers =  async (dispatch) => {
+
+  try {
+      dispatch(usersRequest())
+      const { data }  = await axios.get(`${apiurl}/api/v1/admin/users`,
+      {withCredentials: true}
+      );
+      dispatch(usersSuccess(data))
+  } catch (error) {
+      dispatch(usersFail(error.response?.data?.message))
+  }
+
+}
+
+// admin - deleteUser
+export const getUser = id => async (dispatch) => {
+  try {
+      dispatch(userRequest())
+      const { data }  = await axios.get(`${apiurl}/api/v1/admin/user/${id}`,
+      {withCredentials: true}
+      );
+      dispatch(userSuccess(data))
+  } catch (error) {
+      dispatch(userFail(error.response?.data?.message))
+  }
+
+}
+
+
+//admin - deleteUser
+
+export const deleteUser = id => async (dispatch) => {
+
+  try {
+      dispatch(deleteUserRequest())
+      await axios.delete(`${apiurl}/api/v1/admin/user/${id}`,
+      {withCredentials: true}
+
+      );
+      dispatch(deleteUserSuccess())
+  } catch (error) {
+      dispatch(deleteUserFail(error.response?.data?.message))
+  }
+
+}
+
+
+//admin - updateUser
+export const updateUser = (id, formData) => async (dispatch) => {
+
+  try {
+      dispatch(updateUserRequest())
+      const config = {
+          headers: {
+              'Content-type': 'application/json'
+          },
+          withCredentials: true
+      }
+      await axios.put(`${apiurl}/api/v1/admin/user/${id}`, formData, config);
+      dispatch(updateUserSuccess())
+  } catch (error) {
+      dispatch(updateUserFail(error.response?.data?.message))
+  }
+
+}

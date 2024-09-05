@@ -5,6 +5,7 @@ import productReducer from './Redux/slices/productSlice';
 import authReducer from './Redux/slices/authSlice';
 import cartReducer from './Redux/slices/cartSlice';
 import orderReducer from './Redux/slices/orderSlice';
+import userReducer from './Redux/slices/userSlice';
 
 
 
@@ -14,6 +15,7 @@ const reducer = combineReducers({
   authState: authReducer,
   cartState: cartReducer,
   orderState: orderReducer,
+  userState :userReducer
 });
 
 const store = configureStore({

@@ -51,21 +51,24 @@ const Home = () => {
                 <ProductCard col={3} key={product._id} product={product} />
               ))}
           </div>
-          <div className=" flex justify-center items-center mt-12">
+          <div className=" flex justify-center items-center mt-12 join">
             {totalPoductsCount > 0 && totalPoductsCount > resPerPage ? (
-              <Pagination
-                activePage={currentPage}
-                itemsCountPerPage={resPerPage}
-                totalItemsCount={totalPoductsCount}
-                onChange={setCurrentPageNo}
-                nextPageText={"Next"}
-                firstPageText={"First"}
-                lastPageText={"Last"}
-                itemClass="px-4 py-2 border border-gray-300 text-gray-700 bg-white hover:bg-gray-200" // for styling purpose
-                linkClass="text-blue-500 font-bold "
-                activeClass="bg-gray-300" // entha page active ah irukirathanu kaata
-                innerClass="inline-flex items-center space-x-2"
-              />
+              <div className="">
+                 <Pagination
+                  activePage={currentPage}
+                  itemsCountPerPage={resPerPage}
+                  totalItemsCount={totalPoductsCount}
+                  onChange={setCurrentPageNo}
+                  nextPageText={"Next"}
+                  firstPageText={"First"}
+                  lastPageText={"Last"}
+                  itemClass="join-item btn btn-square btn-md w-24  "  // Adjust size and button styling
+                  linkClass="join-item "
+                  activeClass="join-item bg-primary  btn-active text-white" // Highlight active item
+                  innerClass="join " // Container class for all items
+                />
+              </div>
+             
             ) : null}
           </div>
         </div>

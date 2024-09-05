@@ -34,7 +34,7 @@ const UserOrders = () => {
           <div className="overflow-x-auto  h-screen">
             <table className="table w-full">
               <thead>
-                <tr>
+                <tr className="bg-base-200">
                   <th>Order ID</th>
                   <th>Number of Items</th>
                   <th>Amount</th>
@@ -44,9 +44,9 @@ const UserOrders = () => {
               </thead>
               <tbody>
                 {userOrders.map((order) => (
-                  <tr key={order._id}>
+                  <tr key={order._id} >
                     <td>{order._id}</td>
-                    <td>{order.orderItems.length}</td>
+                    <td className="">{order.orderItems.length}</td>
                     <td>${order.totalPrice}</td>
                     <td>
                       <span

@@ -36,6 +36,7 @@ const ProductCard = ({ product }) => {
             View Details
           </button>
         </Link>
+        
       </div>
     </div>
   );

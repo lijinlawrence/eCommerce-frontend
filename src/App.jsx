@@ -28,6 +28,17 @@ import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import OrderSuccess from "./components/cart/OrderSuccess";
 import UserOrders from "./components/order/UserOrders";
+import New from "./components/layout/New";
+import OrderDetail from "./components/order/OrderDetail";
+import Dashboard from "./components/admin/Dashboard";
+import ProductList from "./components/admin/ProductList";
+import NewProduct from "./components/admin/NewProduct";
+import UpdateProduct from "./components/admin/UpdateProduct";
+import OrderList from "./components/admin/OrderList";
+import UpdateOrder from "./components/admin/UpdateOrder";
+import UserList from "./components/admin/UserList";
+import UpdateUser from "./components/admin/UpdateUser";
+import ReviewList from "./components/admin/ReviewList";
 
 function App() {
   const [stripeApiKey, setStripeApiKey] = useState("");
@@ -47,13 +58,13 @@ function App() {
     getStripeApiKey();
   }, []);
   console.log(stripeApiKey);
-  
+
   return (
     <>
       <Router>
         <HelmetProvider>
           <Header />
-          <div className="w-3/4 mx-auto py-10">
+          <div className="w-3/4 mx-auto ">
             <ToastContainer theme="dark" />
             <Routes>
               <Route path="/" element={<Home />} />
@@ -88,6 +99,7 @@ function App() {
               <Route path="/password/forget" element={<ForgetPassword />} />
               <Route path="/password/reset" element={<ResetPassword />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/new" element={<New />} />
               <Route
                 path="/shipping"
                 element={
@@ -113,10 +125,18 @@ function App() {
                 }
               />
               <Route
+                path="/order/:id"
+                element={
+                  <ProtectedRoute>
+                    <OrderDetail />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
                 path="/myOrders"
                 element={
                   <ProtectedRoute>
-                    <UserOrders/>
+                    <UserOrders />
                   </ProtectedRoute>
                 }
               />
@@ -134,6 +154,81 @@ function App() {
               )}
             </Routes>
           </div>
+          {/* admin routes */}
+          <Routes>
+            <Route
+              path="/admin/dashboard"
+              element={
+                <ProtectedRoute isAdmin={true}>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/products"
+              element={
+                <ProtectedRoute isAdmin={true}>
+                  <ProductList />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/products/create"
+              element={
+                <ProtectedRoute isAdmin={true}>
+                  <NewProduct />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/product/update/:id"
+              element={
+                <ProtectedRoute isAdmin={true}>
+                  <UpdateProduct />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/orders"
+              element={
+                <ProtectedRoute isAdmin={true}>
+                  <OrderList />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/orders/update/:id"
+              element={
+                <ProtectedRoute isAdmin={true}>
+                  <UpdateOrder />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/users"
+              element={
+                <ProtectedRoute isAdmin={true}>
+                  <UserList/>
+                </ProtectedRoute>
+              }
+            />
+                <Route
+                  path="/admin/user/update/:id"
+                  element={
+                    <ProtectedRoute isAdmin={true}>
+                      <UpdateUser/>
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/admin/reviews"
+                  element={
+                    <ProtectedRoute isAdmin={true}>
+                      <ReviewList/>
+                    </ProtectedRoute>
+                  }
+                />
+              </Routes>
 
           <Footer />
         </HelmetProvider>

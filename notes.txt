@@ -122,6 +122,39 @@ const newArray = array.slice(2);
 console.log(newArray); // Output: [3, 4, 5]
 Here, array.slice(2) extracts elements starting from index 2 to the end of the array.
 
+TailwindCss :
+  Tailwind css doesnot allow dafault values of p and h1 tags all types of tages . beccause of this tags contains some little bit margins and paddings
+  so using a package : npm install @tailwindcss/typography@latest
+  and import :  require("@tailwindcss/typography"), in plugins
+  //using calssName = "prose" this allows to write actual meaning of tags
+
+onMouseOver : its addEventlister - hovering
+onMouseOut : its addEventlister - unhovering
+
+Array.from - convert object to array
+
+encType="multipart/form-data" :
+You are using encType="multipart/form-data" in your form because it allows you to upload files (like images) and ensures all form data, 
+including binary files, is correctly transmitted to the server without corruption.
+ This attribute is essential whenever file uploads are involved in a form submission.
+ 
+
+(_, index): 
+   These are the parameters for the callback function in the filter method.
+   The underscore _ represents the current item (which we don't use here), 
+   and index represents the index of the current item.
+
+{params: {id}}:
+    to access query parameter in react :
+      example: reviews?id=8712386848324768   
+
+
+
+
+
+
+
+
 
 
 
