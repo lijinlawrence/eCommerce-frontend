@@ -9,6 +9,8 @@ import { clearError } from "../../Redux/slices/authSlice";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { getAdminProducts } from "../../Redux/actions/productsActions";
+import { deleteProduct } from "../../Redux/actions/productActions";
+import { clearProductCreated } from "../../Redux/slices/productSlice";
 
 
 
