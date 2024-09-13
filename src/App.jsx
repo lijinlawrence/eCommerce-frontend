@@ -154,7 +154,7 @@ function App() {
               )}
             </Routes>
           </div>
-          {/* admin routes */}
+{/* admin routes */}
           <Routes>
             <Route
               path="/admin/dashboard"
