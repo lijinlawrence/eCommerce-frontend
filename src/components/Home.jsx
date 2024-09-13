@@ -16,10 +16,7 @@ const Home = () => {
 
   useEffect(() => {
     if (error) {
-      return toast.error(`Error: ${error}`, {
-        position: toast.POSITION.BOTTOM_CENTER,
-        autoClose: 5000,
-      });
+      return toast.error(`Error: ${error}`);
     }
     dispatch(getProducts(null,null,null,null, currentPage));
   }, [dispatch, error, currentPage]);

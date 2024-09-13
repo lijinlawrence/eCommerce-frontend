@@ -34,7 +34,7 @@ export const getProduct = (id) => async (dispatch) => {
     
   } catch (error) {
     console.log(error);
-    dispatch(productFail(error.response.data.message));
+    dispatch(productFail(error.response?.data?.message));
   }
 };
 
