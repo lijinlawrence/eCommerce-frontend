@@ -53,7 +53,9 @@ const UserList = () => {
       <div className="w-full md:w-4/5 md:ml-[20%] px-4 overflow-y-auto h-screen md:mt-5">
         <h1 className="my-4 text-3xl font-bold">Users List</h1>
         {loading ? (
-          <Loader />
+           <div className="flex justify-center items-center h-screen">
+           <Loader />
+         </div>
         ) : (
           <Fragment>
             {users.length > 0 ? (

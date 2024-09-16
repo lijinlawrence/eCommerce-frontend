@@ -47,7 +47,9 @@ const UpdateOrder = () => {
   return (
     <Fragment>
       {loading ? (
+        <div className="flex justify-center items-center h-screen">
         <Loader />
+      </div>
       ) : (
         <Fragment>
           <div className="flex flex-col lg:flex-row gap-3 justify-between w-3/4 mx-auto">
