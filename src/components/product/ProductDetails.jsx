@@ -41,6 +41,7 @@ const ProductDetails = () => {
 
   const handleCart = (productId, quantity) => {
     dispatch(addCartItem(productId, quantity));
+    toast.success("Item added to cart");
   };
 
   const reviewHandler = () => {
