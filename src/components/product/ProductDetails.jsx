@@ -75,7 +75,9 @@ const ProductDetails = () => {
   return (
     <>
       {loading ? (
-        <Loader />
+         <div className="flex justify-center items-center h-screen">
+         <Loader />
+       </div>
       ) : error ? (
         <div className="error-message">{error}</div>
       ) : (

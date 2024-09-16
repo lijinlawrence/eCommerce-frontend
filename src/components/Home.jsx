@@ -39,7 +39,7 @@ const Home = () => {
         </div>
       ) : (
         <div>
-          <MetaData title={"kittu home"} />
+          <MetaData title={"Home"} />
           <h1 className=" text-4xl font-bold mb-11 ">Latest Products</h1>
 
           <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2  ">
