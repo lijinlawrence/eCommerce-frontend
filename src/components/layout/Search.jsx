@@ -29,9 +29,9 @@ const Search = () => {
 
 
   return (
-    <div className="flex justify-center items-center mt-4">
+    <div className="flex justify-center items-center md:mt-4">
       <form onSubmit={searchHandler} className="">
-        <label className="input input-bordered flex items-center w-full">
+        <label className="input input-bordered flex items-center md:w-full input-sm md:input-md ">
           <input
             type="text"
             className=""

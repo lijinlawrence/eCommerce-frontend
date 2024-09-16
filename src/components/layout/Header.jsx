@@ -113,10 +113,10 @@ const Header = () => {
           menuOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out z-30`}
       >
-        <div className="flex flex-col px-2 space-y-4">
+        <div className="flex flex-col px-1 space-y-4">
           {/* Close Button */}
-          <button className="self-end" onClick={toggleMenu}>
-            <FaTimes className="text-2xl" />
+          <button className="" onClick={toggleMenu}>
+            <FaTimes className="text-2xl text-red-500" />
           </button>
 
           {/* Links at the top in mobile view */}
@@ -165,11 +165,14 @@ const Header = () => {
             </Link>
           )}
           {/* Search in mobile view */}
+          <div className="">
           <Search />
+
+          </div>
           {/* Cart */}
           <Link
             to={"/cart"}
-            className="flex items-center justify-between px-3 py-2 text-gray-700 hover:bg-gray-200"
+            className="flex items-center gap-5 px-3 py-2 text-gray-700 hover:bg-gray-200"
             onClick={toggleMenu}
           >
             <span>Cart</span>
