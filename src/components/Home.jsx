@@ -51,18 +51,19 @@ const Home = () => {
           <div className=" flex justify-center items-center mt-12 join">
             {totalPoductsCount > 0 && totalPoductsCount > resPerPage ? (
               <div className="">
-                 <Pagination
+                <Pagination
                   activePage={currentPage}
                   itemsCountPerPage={resPerPage}
                   totalItemsCount={totalPoductsCount}
                   onChange={setCurrentPageNo}
                   nextPageText={"Next"}
+                  prevPageText={"Prev"}
                   firstPageText={"First"}
                   lastPageText={"Last"}
-                  itemClass="join-item btn btn-square btn-md w-24  "  // Adjust size and button styling
-                  linkClass="join-item "
-                  activeClass="join-item bg-primary  btn-active text-white" // Highlight active item
-                  innerClass="join " // Container class for all items
+                  itemClass="join-item btn btn-square btn-xs md:btn-sm md:btn-md w-10 md:w-24 text-xs md:text-md"
+                  linkClass="join-item"
+                  activeClass="join-item bg-primary btn-active text-white "
+                  innerClass="join flex flex-wrap " // Flex-wrap for better mobile responsiveness
                 />
               </div>
              
